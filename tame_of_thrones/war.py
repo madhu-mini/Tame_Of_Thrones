@@ -28,7 +28,7 @@ class War:
         :return: the result of war if kingdom is attacked with specific msg
         """
         decryption_key = len(kingdom.emblem)
-        decrypted_msg = SeasarCipher.get_decrypted_msg(decryption_key=decryption_key, message=message)
+        decrypted_msg = SeasarCipher.get_decrypted_msg(message=message, decryption_key=decryption_key)
         decrypted_msg_map = War.get_string_mapping(decrypted_msg)
         emblem_map = War.get_string_mapping(kingdom.emblem)
         for letter in emblem_map.keys():

@@ -3,7 +3,7 @@ import abc
 
 class Encryption(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def get_decrypted_msg(self, **kwargs):
+    def get_decrypted_msg(self, message, decryption_key):
         pass
 
 
@@ -13,16 +13,14 @@ class SeasarCipher(Encryption):
         super(SeasarCipher, self).__init__()
 
     @staticmethod
-    def get_decrypted_msg(**kwargs):
+    def get_decrypted_msg(message, decryption_key):
         """
         This function is used to return the decrypted message which is encrypted bu SeasarCipher technique.
-        :param kwargs:
-        :return: return the message in decrypted form
+        :param message:
+        :param decryption_key:
+        :return:
         """
-        message = kwargs['message']
-        decryption_key = kwargs['decryption_key']
         decryption_key = decryption_key % 26
-        # Doing the reveres shift to get decrypted msg so if need to go 4 backwards going 22 place forward
         decryption_key = 26 - decryption_key
         decrypted_msg = ''
         for letter in message:
