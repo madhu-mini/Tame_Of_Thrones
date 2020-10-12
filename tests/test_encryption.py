@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from Encryption import SeasarCipher
+from tame_of_thrones.encryption import SeasarCipher
 
 
 class TestSeasarCipher(TestCase):

@@ -1,4 +1,4 @@
-class InvalidUniverseException(Exception):
+class InvalidUniverseError(Exception):
     def __init__(self, msg=''):
         self.msg = msg
 
@@ -6,7 +6,7 @@ class InvalidUniverseException(Exception):
         return repr(self.msg)
 
 
-class InvalidKingdomException(Exception):
+class InvalidKingdomError(Exception):
     def __init__(self, msg=''):
         self.msg = "Invalid Kingdom: " + msg
 

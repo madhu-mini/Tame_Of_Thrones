@@ -1,8 +1,8 @@
 import unittest
 from unittest import TestCase
 
-from Kingdom import Kingdom
-from Universe_Exceptions import InvalidKingdomException
+from tame_of_thrones.kingdom import Kingdom
+from tame_of_thrones.exceptions.universeExceptions import InvalidKingdomError
 
 
 class TestKingdom(TestCase):
@@ -10,32 +10,32 @@ class TestKingdom(TestCase):
     def test_kingdom_with_no_name(self):
         kingdom_name = None
         kingdom_emblem = 'panda'
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     def test_kingdom_with_empty_name(self):
         kingdom_name = ''
         kingdom_emblem = 'panda'
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     def test_kingdom_with_no_emblem(self):
         kingdom_name = 'Maharashtra'
         kingdom_emblem = 'panda'
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     def test_emblem_with_no_name(self):
         kingdom_name = 'Space'
         kingdom_emblem = None
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     def test_emblem_with_empty_name(self):
         kingdom_name = 'Space'
         kingdom_emblem = ''
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     def test_emblem_with_not_existing_kingdom(self):
         kingdom_name = 'Space'
         kingdom_emblem = 'coconut'
-        self.assertRaises(InvalidKingdomException, Kingdom, kingdom_name, kingdom_emblem)
+        self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
     # To check whether kingdom object is created or not
     def test_create_kingdom_without_king(self):

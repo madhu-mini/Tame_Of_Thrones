@@ -19,17 +19,17 @@ class SeasarCipher(Encryption):
         :param kwargs:
         :return: return the message in decrypted form
         """
-        msg = kwargs['msg']
-        key = kwargs['key']
-        key = key % 26
+        message = kwargs['message']
+        decryption_key = kwargs['decryption_key']
+        decryption_key = decryption_key % 26
         # Doing the reveres shift to get decrypted msg so if need to go 4 backwards going 22 place forward
-        key = 26 - key
+        decryption_key = 26 - decryption_key
         decrypted_msg = ''
-        for letter in msg:
+        for letter in message:
             # uppercase characters
             if letter.isupper():
-                decrypted_msg += chr((ord(letter) + key - 65) % 26 + 65)
+                decrypted_msg += chr((ord(letter) + decryption_key - 65) % 26 + 65)
             # lowercase characters
             else:
-                decrypted_msg += chr((ord(letter) + key - 97) % 26 + 97)
+                decrypted_msg += chr((ord(letter) + decryption_key - 97) % 26 + 97)
         return decrypted_msg

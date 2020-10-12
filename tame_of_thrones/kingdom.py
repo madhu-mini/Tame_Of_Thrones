@@ -1,5 +1,5 @@
-import constant
-from Universe_Exceptions import InvalidKingdomException
+from tame_of_thrones.constants import constant
+from tame_of_thrones.exceptions.universeExceptions import InvalidKingdomError
 
 
 class Kingdom(object):
@@ -16,9 +16,9 @@ class Kingdom(object):
     @name.setter
     def name(self, name):
         if name is None or name is '':
-            raise InvalidKingdomException("Kingdom name must not be empty.")
+            raise InvalidKingdomError("Kingdom name must not be empty.")
         if name.upper() not in constant.KINGDOMS_EMBLEM.keys():
-            raise InvalidKingdomException("Kingdom with unknown emblem,Invalid Output.")
+            raise InvalidKingdomError("Kingdom with unknown emblem,Invalid Output.")
         self.__name = name
 
     @property
@@ -28,9 +28,9 @@ class Kingdom(object):
     @emblem.setter
     def emblem(self, emblem):
         if emblem is None or emblem is '':
-            raise InvalidKingdomException("Kingdom emblem must not be empty.")
+            raise InvalidKingdomError("Kingdom emblem must not be empty.")
         if emblem.upper() not in constant.KINGDOMS_EMBLEM.values():
-            raise InvalidKingdomException("Kingdom with invalid emblem.")
+            raise InvalidKingdomError("Kingdom with invalid emblem.")
         self.__emblem = emblem
 
     @property

@@ -1,7 +1,7 @@
 import collections
 
-import constant
-from Universe_Exceptions import InvalidUniverseException
+from tame_of_thrones.constants import constant
+from tame_of_thrones.exceptions.universeExceptions import InvalidUniverseError
 
 
 class Universe:
@@ -17,7 +17,7 @@ class Universe:
     @reigns.setter
     def reigns(self, reigns):
         if reigns is None or reigns.upper() not in constant.UNIVERSE or reigns in '':
-            raise InvalidUniverseException("Invalid Universe.")
+            raise InvalidUniverseError("Invalid Universe.")
         self.__reigns = reigns
 
     @property
@@ -37,7 +37,7 @@ class Universe:
     def __str__(self):
         return " reigns : {} , kingdoms :  {} ".format(self.__reigns, self.__kingdoms)
 
-    def addKingdom(self, kingdom):
+    def add_kingdom(self, kingdom):
         """
         This method is used to add kingdom to particular universe reigns.
         :param kingdom:
@@ -46,7 +46,7 @@ class Universe:
         if kingdom.name.upper() not in self.__kingdoms.keys():
             self.__kingdoms[kingdom.name.upper()] = kingdom
 
-    def removeKingdom(self, kingdom):
+    def remove_kingdom(self, kingdom):
         """
         This method is used to remove kingdom from particular universe reigns.
         :param kingdom:
@@ -55,7 +55,7 @@ class Universe:
         if kingdom.name.upper() in self.__kingdoms.keys():
             del self.__kingdoms[kingdom.name]
 
-    def getKingdom(self):
+    def get_kingdom(self):
         """
         It is used to get the all kingdoms belonging to particular universe.
         :return:
@@ -65,5 +65,5 @@ class Universe:
             kingdom_str = kingdom_str + kingdom + ' '
         return kingdom_str
 
-    def getNoOfKingdom(self):
+    def get_no_of_kingdom(self):
         return len(self.__kingdoms)
