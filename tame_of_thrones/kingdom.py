@@ -2,7 +2,7 @@ from tame_of_thrones.constants import constant
 from tame_of_thrones.exceptions.universeExceptions import InvalidKingdomError
 
 
-class Kingdom(object):
+class Kingdom(object): #I feel validation related to whether kingdom is in KINGDOMS_EMBLEM etc should not belong to this class. Universe should contain that all kindom-emblem info and it should validate that the kingdom being added is valid or not
 
     def __init__(self, name, emblem, king_name=None):
         self.name = name
