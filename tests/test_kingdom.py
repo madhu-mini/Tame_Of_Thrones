@@ -7,7 +7,7 @@ from tame_of_thrones.exceptions.universeExceptions import InvalidKingdomError
 
 class TestKingdom(TestCase):
 
-    def test_kingdom_with_no_name(self):
+    def test_kingdom_with_no_name(self): #have descriptive test names like test_should_throw_error_given_kindom_with_no_name
         kingdom_name = None
         kingdom_emblem = 'panda'
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
