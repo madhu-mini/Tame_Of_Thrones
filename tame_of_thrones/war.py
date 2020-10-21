@@ -6,7 +6,7 @@ from tame_of_thrones.encryption import SeasarCipher
 class War:
 
     @staticmethod
-    def get_string_mapping(mapping_string): #instead of `get_string_mapping` I'd prefer something like `get_character_count_map`
+    def get_character_count_map(mapping_string):
         """
         This method is used to get the mapping of letters in input string
         :param mapping_string:
@@ -29,8 +29,8 @@ class War:
         """
         decryption_key = len(kingdom.emblem)
         decrypted_msg = SeasarCipher.get_decrypted_msg(message=message, decryption_key=decryption_key)
-        decrypted_msg_map = War.get_string_mapping(decrypted_msg)
-        emblem_map = War.get_string_mapping(kingdom.emblem)
+        decrypted_msg_map = War.get_character_count_map(decrypted_msg)
+        emblem_map = War.get_character_count_map(kingdom.emblem)
         for letter in emblem_map.keys():
             if emblem_map[letter] > decrypted_msg_map[letter]:
                 return False
