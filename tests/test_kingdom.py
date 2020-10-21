@@ -2,37 +2,37 @@ import unittest
 from unittest import TestCase
 
 from tame_of_thrones.kingdom import Kingdom
-from tame_of_thrones.exceptions.universeExceptions import InvalidKingdomError
+from tame_of_thrones.exceptions.kingdom_exceptions import InvalidKingdomError
 
 
 class TestKingdom(TestCase):
 
-    def test_kingdom_with_no_name(self): #have descriptive test names like test_should_throw_error_given_kindom_with_no_name
+    def test_kingdom_with_no_name_should_throw_InvalidKingdomError(self):
         kingdom_name = None
         kingdom_emblem = 'panda'
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
-    def test_kingdom_with_empty_name(self):
+    def test_kingdom_with_empty_name_should_throw_InvalidKingdomError(self):
         kingdom_name = ''
         kingdom_emblem = 'panda'
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
-    def test_kingdom_with_no_emblem(self):
+    def test_kingdom_with_no_emblem_should_throw_InvalidKingdomError(self):
         kingdom_name = 'Maharashtra'
         kingdom_emblem = 'panda'
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
-    def test_emblem_with_no_name(self):
+    def test_emblem_with_no_name_should_throw_InvalidKingdomError(self):
         kingdom_name = 'Space'
         kingdom_emblem = None
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
-    def test_emblem_with_empty_name(self):
+    def test_emblem_with_empty_name_should_throw_InvalidKingdomError(self):
         kingdom_name = 'Space'
         kingdom_emblem = ''
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)
 
-    def test_emblem_with_not_existing_kingdom(self):
+    def test_emblem_with_not_existing_kingdom_should_throw_InvalidKingdomError(self):
         kingdom_name = 'Space'
         kingdom_emblem = 'coconut'
         self.assertRaises(InvalidKingdomError, Kingdom, kingdom_name, kingdom_emblem)

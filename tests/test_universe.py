@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from tame_of_thrones.universe import Universe
-from tame_of_thrones.exceptions.universeExceptions import InvalidUniverseError
+from tame_of_thrones.exceptions.universe_exceptions import InvalidUniverseError
 
 
 class TestUniverse(TestCase):

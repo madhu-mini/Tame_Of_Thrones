@@ -1,7 +1,7 @@
 import collections
 
 from tame_of_thrones.constants import constant
-from tame_of_thrones.exceptions.universeExceptions import InvalidUniverseError
+from tame_of_thrones.exceptions.universe_exceptions import InvalidUniverseError
 
 
 class Universe:
