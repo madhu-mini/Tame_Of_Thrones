@@ -28,7 +28,7 @@ def main():
     if southeros_universe.get_no_of_kingdom() > MIN_NO_OF_WINS:
         print(southeros_universe.get_kingdom())
     else:
-        print("None")
+        print("NONE")
 
 
 if __name__ == "__main__":
