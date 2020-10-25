@@ -15,7 +15,7 @@ class Kingdom(object):
 
     @name.setter
     def name(self, name):
-        if name is None or name is '':
+        if name is None or name == '':
             raise InvalidKingdomError("Kingdom name must not be empty.")
         if name.upper() not in constant.KINGDOMS_EMBLEM.keys():
             raise InvalidKingdomError("Kingdom with unknown emblem,Invalid Output.")
@@ -27,7 +27,7 @@ class Kingdom(object):
 
     @emblem.setter
     def emblem(self, emblem):
-        if emblem is None or emblem is '':
+        if emblem is None or emblem == '':
             raise InvalidKingdomError("Kingdom emblem must not be empty.")
         if emblem.upper() not in constant.KINGDOMS_EMBLEM.values():
             raise InvalidKingdomError("Kingdom with invalid emblem.")
